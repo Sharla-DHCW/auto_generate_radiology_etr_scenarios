@@ -23,7 +23,7 @@ class TestGenerateETR:
     def test_generate_rad_etr(self, driver, username, password, tpnhs):
 
         #Login Functionality
-        #username and password defined in @pytest.mark.parametrize
+        #username and password defined in test_data.py
         login_wcp(self, driver,username,password)
 
         #Search Patient Functionality
@@ -34,7 +34,7 @@ class TestGenerateETR:
         navigate_and_open_radiology_etr(self,driver)
 
         #
-        #Complete Standard Form Functionality (Switch Automation into Iframe of form)
+        # Input Standard Form Functionality
         #
 
         #Switch to Iframe drive
@@ -125,7 +125,7 @@ class TestGenerateETR:
         select_english.click()
 
         #
-        # Form input has been completed at this point
+        # Form input has been completed
         #
 
         # Sign Off Form

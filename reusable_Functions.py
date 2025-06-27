@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By # Imports By class frm Selenium fram
 from selenium.webdriver.support.wait import WebDriverWait # Imports WebDriverWait from selenium to allow you to wait for certain conditions/elements before proceeding
 from selenium.webdriver.support import expected_conditions as ec # Imports the expected conditions module and renames it to ec to contain predefined conditions to use with WebDriverWait
 from test_data import (SIGNOFF_NAME, SIGNOFF_ROLE, SIGNOFF_GMC, SIGNOFF_CONTACT_INFO)
+
 #Function to log into WCP on PIT4
 def login_wcp (self, driver,username,password):
     # Navigate to WCP PIT 4
@@ -56,6 +57,28 @@ def search_patient(self,driver,tpnhs):
     # Enter Test Patient NHS into PatientID search box
     patientid_locator = driver.find_element(By.ID, "searchByIdTextBox")
     patientid_locator.send_keys(tpnhs)
+
+    # Select Search Button
+    searchpat_locator = driver.find_element(By.ID, "searchButton")
+    searchpat_locator.click()
+
+#Function to search for female patient (nhs number to be defined in ftpnhs)
+def search_female_patient(self,driver,ftpnhs):
+    # Select Patient Search Button
+    driver.find_element(By.ID, "MyPatientsSearch").click()
+
+    # Wait for dropdown options
+    wait = WebDriverWait(driver, 5)
+    wait.until(ec.presence_of_element_located((By.ID, "Search")))
+
+    # Select Search
+    search_locator = driver.find_element(By.ID, "Search")
+    search_locator.click()
+    time.sleep(1)
+
+    # Enter Test Patient NHS into PatientID search box
+    patientid_locator = driver.find_element(By.ID, "searchByIdTextBox")
+    patientid_locator.send_keys(ftpnhs)
 
     # Select Search Button
     searchpat_locator = driver.find_element(By.ID, "searchButton")
