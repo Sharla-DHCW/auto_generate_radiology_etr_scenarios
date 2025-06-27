@@ -1,10 +1,15 @@
+Status: Draft 
+Following work to be completed: 
+1) Complete form inputs on generate_Maximum_Data_Radiology_ETR.py
+2) Start/Complete generate_Special_Character_Data_Radiology_ETR.py
+
 **This code repository allows users to generate Radiology ETR requests from WCP SIT environment automatically for the following test scenarios:**
 - Send a Radiology ETR with a standard size data input
 - Send a Radiology ETR with the minimum data input required on the form
 - Send a Radiology ETR with the maximum data input available on the form
 - Send a Radiology ETR with special/numerical characters in all free text fields
 
-These scenarios help test the the messaging fabric and the way in which receiving systems handle different data input possibilities. 
+These scenarios help test the way in which the messaging fabric and receiving systems handle the different data input possibilities. 
 
 **Prerequisites to execution of code:**
 For the code to be executed successfully. The following test data needs to be amended in the **test_data.py** file prior to code execution:
