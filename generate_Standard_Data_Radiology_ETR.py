@@ -12,7 +12,7 @@ from selenium.webdriver.common.keys import Keys #Imports key class to simulate k
 from reusable_Functions import login_wcp, logout_wcp, sign_off_form, search_patient, continue_session_bypass, \
     navigate_and_open_radiology_etr
 
-class TestGenerateETR:
+class TestETR:
 
     #Create pytest marker called ETR (Can selectively run or group tests per marker)
     @pytest.mark.etr
@@ -20,7 +20,7 @@ class TestGenerateETR:
     #Create parametrization decorator
     @pytest.mark.parametrize("username, password, tpnhs", [(TEST_USERNAME,TEST_PASSWORD, TEST_NHS_NUMBER)])
 
-    def test_generate_rad_etr(self, driver, username, password, tpnhs):
+    def test_generate_standard_rad_etr(self, driver, username, password, tpnhs):
 
         #Login Functionality
         #username and password defined in test_data.py

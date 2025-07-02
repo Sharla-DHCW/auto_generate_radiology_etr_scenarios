@@ -11,13 +11,13 @@ from test_data import (TEST_USERNAME,
                        SRC_NAME,
                        PATIENT_LOCATION, SPECIALITY, TEST_CLINICAL_QUESTION_MINIMUM)
 
-class TestGenerateMinimumETR:
+class TestETR:
 
     @pytest.mark.etr
     # Create parametrization decorator
     @pytest.mark.parametrize("username, password, tpnhs", [(TEST_USERNAME, TEST_PASSWORD, TEST_NHS_NUMBER)])
 
-    def test_generate_minimum_etr (self, driver, username, password, tpnhs):
+    def test_generate_min_rad_etr (self, driver, username, password, tpnhs):
 
         # Login Functionality
         # username and password defined in @pytest.mark.parametrize
